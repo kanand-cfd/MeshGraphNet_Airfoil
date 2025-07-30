@@ -21,7 +21,7 @@ time_step = 15
 node_pos = grid[airfoil_id, :, time_step, :]          # (5233, 2)
 triangles = cells[airfoil_id, :, time_step, :]        # (10216, 3)
 velocity = data[airfoil_id, :, time_step, :2]         # (5233, 2)
-pressure = data[airfoil_id, :, time_step, 2]          # (5233,)
+pressure = data[airfoil_id, :, time_step, 3]          # (5233,)
 
 # Compute velocity magnitude
 vel_mag = np.linalg.norm(velocity, axis=1)

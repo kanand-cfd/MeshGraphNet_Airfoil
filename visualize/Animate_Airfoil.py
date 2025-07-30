@@ -41,7 +41,7 @@ n_levels=50
 
 # === Initialize dummy contourf to attach colorbars ===
 vel_mag_0 = np.linalg.norm(data[airfoil_id, :, 0, :2], axis=1)
-pressure_0 = data[airfoil_id, :, 0, 2]
+pressure_0 = data[airfoil_id, :, 0, 3]
 
 v_contour = ax1.tricontourf(tri, vel_mag_0, levels=n_levels, cmap='plasma')
 p_contour = ax2.tricontourf(tri, pressure_0, levels=n_levels, cmap='viridis')
@@ -54,7 +54,7 @@ def update(frame):
     global cbar1, cbar2
 
     velocity = data[airfoil_id, :, frame, :2]
-    pressure = data[airfoil_id, :, frame, 2]
+    pressure = data[airfoil_id, :, frame, 3]
     vel_mag = np.linalg.norm(velocity, axis=1)
 
     # Remove old contours

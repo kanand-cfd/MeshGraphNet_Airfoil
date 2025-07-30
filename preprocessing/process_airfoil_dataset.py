@@ -24,8 +24,8 @@ for frame in tqdm(range(num_timesteps - 1)):
     # Inputs
     node_pos = grid[airfoil_id, :, frame, :]        # [N, 2]
     triangles = cells[airfoil_id, :, frame, :]      # [T, 3]
-    features = data[airfoil_id, :, frame, :3]       # [N, 3] u, v, p
-    target = data[airfoil_id, :, frame + 1, :3]     # [N,3] next timestep
+    features = data[airfoil_id, :, frame, :4]       # [N, 3] u, v, rho, p
+    target = data[airfoil_id, :, frame + 1, :4]     # [N,3] next timestep
     node_type = np.zeros((features.shape[0],))
 
     # Build graph
