@@ -4,4 +4,6 @@ __pycache__/
 #*/.pyc
 
 # Data
-data/*
+data/Airfoil/*
+data/graphsAll_*
+
